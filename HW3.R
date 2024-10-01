@@ -139,7 +139,7 @@ cat("Correlation between price in-store and online:", round(correlation_prices, 
 
 n <- sum(!is.na(data_online_prices$price) & !is.na(data_online_prices$price_online))
 
-se_correlation <- sqrt((1 - correlation_prices^2) / (n - 2))
+se_correlation <- (1 - correlation_prices^2) / sqrt((n - 2))
 
 cat("Standard error of the sample correlation coefficient:", round(se_correlation, 5), "\n")
 
